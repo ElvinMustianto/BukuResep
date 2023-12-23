@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PastryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PastryController::class, 'index']);
+Route::get('/home', [PastryController::class, 'index']);
+Route::get('/pastry/{pastry:slug}', [PastryController::class, 'show']);
+Route::get('/category', [CategoryController::class, 'index']);
