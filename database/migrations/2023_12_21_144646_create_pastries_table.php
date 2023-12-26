@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('pastries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
+            $table->foreignId('user_id');
             $table->string('nama_resep');
             $table->string('slug')->unique();
             $table->text('excerpt');

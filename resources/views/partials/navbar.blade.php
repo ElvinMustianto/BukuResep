@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-white shadow-lg p-3 mb-5 bg-body rounded">
     <div class="container-fluid">
-        <a class="navbar-brand mx-auto font-monospace" href="#">BUKU RESEP</a>
+        <a class="navbar-brand mx-auto font-monospace" href="/">BUKU RESEP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,6 +11,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ ($title === "Category") ? 'active' : '' }}" href="/category">Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ ($title === "Penulis") ? 'active' : '' }}" href="/penulis">Penulis</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

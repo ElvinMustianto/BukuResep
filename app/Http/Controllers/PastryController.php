@@ -11,7 +11,7 @@ class PastryController extends Controller
     {
         return view('home', [
             'title' => 'Home',
-            'patrys' => Pastry::all()
+            'pastrys' => Pastry::with(['user', 'category'])->latest()->get()
         ]);
     }
 
@@ -19,7 +19,7 @@ class PastryController extends Controller
     {
         return view('pastry', [
             'title' => 'Pastry',
-            'pastry' => Pastry::find($slug)
+            'pastrys' => Pastry::find($slug)
         ]);
     }
 }

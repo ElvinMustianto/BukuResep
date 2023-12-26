@@ -11,7 +11,15 @@ class CategoryController extends Controller
     {
         return view('category', [
             'title' => 'Category',
-            'patrys' => Category::all()
+            'category' => Category::all()
+        ]);
+    }
+
+    public function show(Category $category)
+    {
+        return view('penulis', [
+            'title' => 'Penulis',
+            'users' => $category->pastry->load('category', 'user')
         ]);
     }
 }
