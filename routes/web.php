@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PastryController::class, 'index']);
-Route::get('/home', [PastryController::class, 'index']);
+Route::get('/pastrys', [PastryController::class, 'index']);
 Route::get('/pastry/{pastry:slug}', [PastryController::class, 'show']);
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{category:slug}', [CategoryController::class, 'show']);

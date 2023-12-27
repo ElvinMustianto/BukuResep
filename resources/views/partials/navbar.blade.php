@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto"> <!-- Menggunakan mx-auto untuk memindahkan item menu ke tengah -->
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" href="/home">Home</a>
+                    <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" href="/pastrys">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ ($title === "Category") ? 'active' : '' }}" href="/category">Category</a>

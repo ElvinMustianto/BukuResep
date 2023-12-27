@@ -17,9 +17,10 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        return view('home', [
+        return view('pastrys', [
             'title' => 'Penulis',
-            'users' => $user->pastry->load('category', 'user')
+            'active' => 'Penulis',
+            'pastrys' => $user->pastry->load('user', 'category')
         ]);
     }
 }

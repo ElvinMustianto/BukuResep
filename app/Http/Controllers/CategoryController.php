@@ -17,9 +17,10 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return view('penulis', [
-            'title' => 'Penulis',
-            'users' => $category->pastry->load('category', 'user')
+        return view('pastrys', [
+            'title' => 'Category',
+            'active' => 'Category',
+            'pastrys' => $category->pastry->load('user', 'category')
         ]);
     }
 }

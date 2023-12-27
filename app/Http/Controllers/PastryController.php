@@ -9,17 +9,18 @@ class PastryController extends Controller
 {
     public function index()
     {
-        return view('home', [
+        return view('pastrys', [
             'title' => 'Home',
-            'pastrys' => Pastry::with(['user', 'category'])->latest()->get()
+            'pastrys' => Pastry::latest()->filter(request(['search', 'category']))->get()
         ]);
     }
 
-    public function show($slug)
+    public function show(Pastry $pastry)
     {
         return view('pastry', [
             'title' => 'Pastry',
-            'pastrys' => Pastry::find($slug)
+            'pastry' => $pastry
         ]);
     }
+
 }
