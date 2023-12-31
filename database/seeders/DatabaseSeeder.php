@@ -24,6 +24,11 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Kue Basah',
             'slug' => 'kue-basah'
         ]);
+
+        Category::create([
+            'nama' => 'Roti',
+            'slug' => 'roti'
+        ]);
         Pastry::factory(20)->create();
     }
 }

@@ -12,7 +12,7 @@
                             class="text-decoration-none">{{ $pastry->category->nama }}</a>
                             {{ $pastry->created_at->diffForHumans() }}</small>
                   </p>
-                  <img src="https://source.unsplash.com/1200x400?{{ $pastry->category->nama}}" alt="{{ $pastry->category->nama}}"
+                  <img src="https://source.unsplash.com/1200x400?pastry" alt="{{ $pastry->category->nama}}"
                   class="img-fluid mb-3">
                   <article>
                     <h4>Bahan : </h4>

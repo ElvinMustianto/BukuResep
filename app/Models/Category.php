@@ -9,6 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $load = ['user', 'category'];
 
     public function pastry()
     {

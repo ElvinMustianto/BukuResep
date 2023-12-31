@@ -11,6 +11,7 @@ class CategoryController extends Controller
     {
         return view('category', [
             'title' => 'Category',
+            'active' => 'category',
             'category' => Category::all()
         ]);
     }
@@ -19,8 +20,8 @@ class CategoryController extends Controller
     {
         return view('pastrys', [
             'title' => 'Category',
-            'active' => 'Category',
-            'pastrys' => $category->pastry->load('user', 'category')
+            'active' => 'category',
+            'pastrys' => $category->pastry
         ]);
     }
 }

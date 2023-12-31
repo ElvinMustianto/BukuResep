@@ -1,7 +1,9 @@
 <?php
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PastryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegistrasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +24,7 @@ Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/penulis', [UserController::class, 'index']);
 Route::get('/penulis/{user:username}', [UserController::class, 'show']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegistrasiController::class, 'index']);
+
+Route::post('/register', [RegistrasiController::class, 'store']);

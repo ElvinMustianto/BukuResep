@@ -11,7 +11,8 @@ class PastryController extends Controller
     {
         return view('pastrys', [
             'title' => 'Home',
-            'pastrys' => Pastry::latest()->filter(request(['search', 'category']))->get()
+            'active' => 'home',
+            'pastrys' => Pastry::latest()->filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString()
         ]);
     }
 
@@ -19,6 +20,7 @@ class PastryController extends Controller
     {
         return view('pastry', [
             'title' => 'Pastry',
+            'active' => 'home',
             'pastry' => $pastry
         ]);
     }

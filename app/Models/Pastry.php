@@ -22,6 +22,12 @@ class Pastry extends Model
                 $query->where('slug', $category);
             });
         });
+
+        $query->when($filters['user'] ?? false, function ($query, $user) {
+            return $query->whereHas('user', function ($query) use ($user) {
+                $query->where('username', $user);
+            });
+        });
     }
     public function category()
     {
