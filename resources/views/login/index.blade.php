@@ -6,7 +6,7 @@
           <div class="card-body">
             <h3 class="text-center font-monospace">BUKU RESEP</h3>
             <h5 class="text-center font-monospace">LOGIN</h5>
-            <form>
+            <form action="" method="GET">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Username</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -24,7 +24,7 @@
                 </div>
                 <a class="text-dark fw-bold text-decoration-none" href="./index.html">Forgot Password ?</a>
               </div>
-              <a href="./index.html" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">Sign In</a>
+              <button type="submit" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">Sign In</button>
               <div class="d-flex align-items-center justify-content-center">
                 <a class="text-dark fw-bold ms-2 text-decoration-none" href="/register">Create an account</a>
               </div>
@@ -32,5 +32,5 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
 @endsection
