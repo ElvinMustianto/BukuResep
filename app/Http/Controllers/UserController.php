@@ -11,7 +11,6 @@ class UserController extends Controller
     {
         return view('penulis', [
             'title' => 'Penulis',
-            'active' => 'penulis',
             'users' => User::latest()->get()
         ]);
     }
@@ -20,7 +19,6 @@ class UserController extends Controller
     {
         return view('pastrys', [
             'title' => 'Penulis',
-            'active' => 'penulis',
             'pastrys' => $user->pastry
         ]);
     }

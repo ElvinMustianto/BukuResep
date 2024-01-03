@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPastryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PastryController;
 use App\Http\Controllers\UserController;
@@ -24,7 +26,12 @@ Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/penulis', [UserController::class, 'index']);
 Route::get('/penulis/{user:username}', [UserController::class, 'show']);
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/register', [RegistrasiController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/register', [RegistrasiController::class, 'index'])->middleware('guest');
+Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
 
 Route::post('/register', [RegistrasiController::class, 'store']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::resource('/dashboard/pastry',DashboardPastryController::class)->middleware('auth');
