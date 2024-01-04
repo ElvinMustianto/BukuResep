@@ -1,25 +1,19 @@
-<!-- Sidebar navigation-->
-<nav class="sidebar-nav">
-    <ul id="sidebarnav" class="mb-4 pb-2">
-      <span>BUKU RESEP</span>
-      <li class="sidebar-item">
-        <a class="sidebar-link sidebar-link primary-hover-bg"
-          href="/dashboard"
-          aria-expanded="false">
-          <span class="aside-icon p-2 bg-light-primary rounded-3">
-            <i class="ti ti-layout-dashboard fs-7 text-primary"></i>
-          </span>
-          <span class="hide-menu ms-2 ps-1">Dashboard</span>
-        </a>
-      </li>
-      <li class="sidebar-item">
-        <a class="sidebar-link sidebar-link primary-hover-bg"
-          href="/dashboard/pastry"
-          aria-expanded="false">
-          <span class="aside-icon p-2 bg-light-primary rounded-3">
-            <i class="ti ti-file-description fs-7 text-primary"></i>
-          </span>
-          <span class="hide-menu ms-2 ps-1">Resep Saya</span>
-        </a>
-      </li>
-  </nav>
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse shadow-lg" style="height: 100vh">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">
+                <i class="bi bi-house-door"></i>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ Request::is('dashboard/pastry') ? 'active' : '' }}" href="/dashboard/pastry">
+                <i class="bi bi-file-earmark-text"></i>
+                Resep Saya
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+

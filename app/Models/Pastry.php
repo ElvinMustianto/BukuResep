@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Pastry extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
     protected $guarded = ['id'];
     protected $with = ['user', 'category'];
 
@@ -29,6 +30,14 @@ class Pastry extends Model
             });
         });
     }
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'nama_resep'
+            ]
+        ];
+    }
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -37,6 +46,11 @@ class Pastry extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
 }

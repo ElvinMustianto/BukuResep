@@ -28,10 +28,14 @@ Route::get('/penulis', [UserController::class, 'index']);
 Route::get('/penulis/{user:username}', [UserController::class, 'show']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::get('/register', [RegistrasiController::class, 'index'])->middleware('guest');
-Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/pastry/checkSlug', [DashboardPastryController::class, 'checkSlug']);
+
 
 Route::post('/register', [RegistrasiController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::resource('/dashboard/pastry',DashboardPastryController::class)->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::resource('/dashboard/pastry', DashboardPastryController::class);
+});

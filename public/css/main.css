@@ -1,0 +1,27 @@
+trix-toolbar [data-trix-button-group="file-tools"] {
+    display: none;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin-top: 56px; /* Adjusted height of your fixed header */
+  }
+
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1;
+  }
+
+  .content {
+    margin-right: 150px;
+    margin-left: 100px;
+  }
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
