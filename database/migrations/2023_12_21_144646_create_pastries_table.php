@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->foreignId('user_id');
             $table->string('nama_resep');
             $table->string('slug')->unique();
+            $table->string('image')->nullable();
             $table->text('excerpt');
             $table->text('bahan');
             $table->text('cara_masak');

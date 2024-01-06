@@ -22,7 +22,13 @@
     @if ($pastrys->count())
         <div class="card mb-3 shadow-lg p-3 mb-5 bg-body rounded">
             <a href="/pastry/{{ $pastrys[0]->slug }}" class="text-decoration-none text-dark">
+                @if ($pastrys[0]->image)
+               <div style="max-height: 400px; max-width: 1200px; margin: auto;">
+                <img src="{{ asset('storage/' . $pastrys[0]->image) }}" alt="{{ $pastrys[0]->category->nama }}" style="width: 100%; height:400px;">
+                </div>
+                @else
                 <img src="https://source.unsplash.com/1200x300?pastry" class="card-img-top" alt="{{ $pastrys[0]->category->nama }}">
+                @endif
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ $pastrys[0]->nama_resep }}</h5>
                     <p class="card-text">{{ $pastrys[0]->excerpt }}</p>
@@ -51,7 +57,11 @@
                     <div class="col-md-4">
                         <div class="card shadow p-3 mb-5 bg-body rounded">
                             <a href="/pastry/{{ $pastry->slug }}" class="text-decoration-none text-dark">
+                                @if ($pastry->image)
+                                    <img src="{{ asset('storage/' . $pastry->image) }}" alt="{{ $pastry->category->nama}}">
+                                @else
                                 <img src="https://source.unsplash.com/500x300?pastry" class="card-img-top" alt="{{ $pastry->category->nama }}">
+                                @endif
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $pastry->nama_resep }}</h5>
                                     <p class="card-text">{{ $pastry->excerpt }}</p>

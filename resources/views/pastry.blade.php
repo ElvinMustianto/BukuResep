@@ -12,8 +12,13 @@
                             class="text-decoration-none">{{ $pastry->category->nama }}</a>
                             {{ $pastry->created_at->diffForHumans() }}</small>
                   </p>
-                  <img src="https://source.unsplash.com/1200x400?pastry" alt="{{ $pastry->category->nama}}"
-                  class="img-fluid mb-3">
+                  @if ($pastry->image)
+                  <div style="max-height: 400px">
+                      <img src="{{ asset('storage/' . $pastry->image) }}" alt="{{ $pastry->category->nama}}" class="img-fluid mb-3" style="width: 100%; height:300px;">
+                  </div>
+                  @else
+                  <img src="https://source.unsplash.com/1200x400?pastry" alt="{{ $pastry->category->nama}}" class="img-fluid mb-3">
+                  @endif
                   <article>
                     <h4>Bahan : </h4>
                   <p>{!! $pastry->bahan !!}</p>

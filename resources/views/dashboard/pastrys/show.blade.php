@@ -16,10 +16,20 @@
                         {{ $pastry->created_at->diffForHumans() }}</small>
               </p>
               <a href="/dashboard/pastry" class="btn btn-success me-1"><i class="bi bi-arrow-bar-left me-1"></i>Kembali</a>
-              <a href="" class="btn btn-warning me-1"><i class="bi bi-pencil-square me-1"></i>Edit</a>
-              <a href="" class="btn btn-danger"><i class="bi bi-trash3-fill me-1"></i>Hapus</a>
-              <img src="https://source.unsplash.com/1200x400?pastry" alt="{{ $pastry->category->nama}}"
-              class="img-fluid mb-3 mt-3">
+              <a href="/dashboard/pastry/{{ $pastry->slug }}/edit" class="btn btn-warning me-1"><i class="bi bi-pencil-square me-1"></i>Edit</a>
+              <form action="/dashboard/pastry/{{ $pastry->slug }}" method="POST" class="d-inline">
+                @method('delete')
+                @csrf
+                <button class="btn btn-danger" onclick="return confirm('Are you sure! Delete Resep {{ $pastry->nama_resep }}')">
+                    <i class="bi bi-trash3-fill"></i>Hapus</button>
+                </form>
+                @if ($pastry->image)
+                <div style="max-height: 400px">
+                    <img src="{{ asset('storage/' . $pastry->image) }}" alt="{{ $pastry->category->nama}}" class="img-fluid mb-3 mt-3" style="width: 100%; height:300px;">
+                </div>
+                @else
+                <img src="https://source.unsplash.com/1200x400?pastry" alt="{{ $pastry->category->nama}}" class="img-fluid mb-3 mt-3">
+                @endif
               <article>
                 <h4>Bahan : </h4>
               <p>{!! $pastry->bahan !!}</p>

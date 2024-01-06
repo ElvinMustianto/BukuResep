@@ -14,11 +14,6 @@ trix-toolbar [data-trix-button-group="file-tools"] {
     z-index: 1;
   }
 
-  .content {
-    margin-right: 150px;
-    margin-left: 100px;
-  }
-
   .fixed-header {
     position: fixed;
     top: 0;
