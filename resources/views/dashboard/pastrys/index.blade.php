@@ -5,7 +5,7 @@
           <h1 class="h2">Resep Saya</h1>
           </div>
           @if(session()->has('success'))
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
@@ -35,7 +35,7 @@
                             <form action="/dashboard/pastry/{{ $pastry->slug }}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf
-                            <button class="badge bg-danger border-0" onclick="return confirm('Are you sure! Delete Resep {{ $pastry->nama_resep }}')">
+                            <button class="badge bg-danger border-0 ms-1" onclick="return confirm('Are you sure! Delete Resep {{ $pastry->nama_resep }}')">
                                 <i class="bi bi-trash3-fill"></i></button>
                             </form>
                         </td>

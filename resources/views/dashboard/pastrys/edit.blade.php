@@ -77,8 +77,9 @@
     </div>
   </main>
 
-    {{-- Untuk membuat slug secara otomatis dengan sluggable menggunakan fetch API--}}
+
     <script>
+        //  Untuk membuat slug secara otomatis dengan sluggable menggunakan fetch API
         const nama_resep = document.querySelector('#nama_resep');
         const slug = document.querySelector('#slug');
 
@@ -101,6 +102,7 @@
             e.preventDefault();
         });
 
+        // Untuk menampilkan gambar
         function previewImage() {
             const image = document.querySelector('#image');
             const imgPreview = document.querySelector('.img-preview');

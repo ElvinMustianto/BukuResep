@@ -22,7 +22,7 @@ class PastryFactory extends Factory
             'excerpt' => $this->faker->paragraph(),
             'bahan' => $this->faker->paragraph(),
             'cara_masak' => $this->faker->paragraph(),
-            'category_id' => mt_rand(1, 2),
+            'category_id' => mt_rand(1, 3),
             'user_id' => mt_rand(1, 3),
         ];
     }

@@ -37,15 +37,6 @@
                 <label class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" id="password">
               </div>
-              {{-- <div class="d-flex align-items-center justify-content-between mb-4">
-                <div class="form-check">
-                  <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
-                  <label class="form-check-label text-dark me-1" for="flexCheckChecked">
-                    Remeber this Device
-                  </label>
-                </div>
-                <a class="text-dark fw-bold text-decoration-none" href="./index.html">Forgot Password ?</a>
-              </div> --}}
               <button type="submit" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">Sign In</button>
               <div class="d-flex align-items-center justify-content-center">
                 <a class="text-dark fw-bold ms-2 text-decoration-none" href="/register">Create an account</a>

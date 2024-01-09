@@ -2,6 +2,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPastryController;
+use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PastryController;
 use App\Http\Controllers\UserController;
@@ -29,6 +30,7 @@ Route::get('/penulis/{user:username}', [UserController::class, 'show']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::get('/register', [RegistrasiController::class, 'index'])->middleware('guest');
 Route::get('/dashboard/pastry/checkSlug', [DashboardPastryController::class, 'checkSlug']);
+Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
 
 
 Route::post('/register', [RegistrasiController::class, 'store']);
